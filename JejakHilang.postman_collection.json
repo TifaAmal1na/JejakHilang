@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "c575b801-fba6-48f6-a269-5658a1f8cb93",
+		"name": "JejakHilang",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27709459",
+		"_collection_link": "https://capstone-jejakhilang.postman.co/workspace/JejakHilang~83780e32-c1d5-4e07-b5ba-fa4ff1c797bb/collection/27709459-c575b801-fba6-48f6-a269-5658a1f8cb93?action=share&source=collection_link&creator=27709459"
+	},
+	"item": [
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "Get Notification",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orang Hilang",
+			"item": [
+				{
+					"name": "Get Orang Hilang",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
