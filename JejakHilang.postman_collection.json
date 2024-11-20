@@ -14,7 +14,17 @@
 					"name": "Get Notification",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/notifications",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"notifications"
+							]
+						}
 					},
 					"response": []
 				}
@@ -27,7 +37,17 @@
 					"name": "Get Users",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
 					},
 					"response": []
 				}
@@ -40,15 +60,44 @@
 					"name": "Get Orang Hilang",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/person",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"person"
+							]
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Add Orang Hilang",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/person",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"person"
+							]
+						}
 					},
 					"response": []
 				}
