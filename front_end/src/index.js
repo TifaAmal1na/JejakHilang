@@ -1,6 +1,9 @@
 // Mengimpor file CSS
 import '../assets/style.css';  // Sesuaikan path relatif menuju folder assets
 
+// Mengimpor modul yang diperlukan
+import loadHome from '../pages/home.js';
+import loadDetail from '../pages/detail.js';
 
 // Menambahkan kode JavaScript untuk interaktivitas (jika diperlukan)
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,11 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainContent = document.getElementById('main-content');
 
   homeLink.addEventListener('click', () => {
-    mainContent.innerHTML = '<h2>Home Page</h2><p>Welcome to the Home Page!</p>';
+    loadHome(); // Memanggil fungsi dari home.js
   });
 
   detailLink.addEventListener('click', () => {
-    mainContent.innerHTML = '<h2>Detail Page</h2><p>Here are the details.</p>';
+    const personId = prompt('Enter person ID'); // Bisa diganti dengan ID yang lebih dinamis
+    loadDetail(personId); // Memanggil fungsi dari detail.js
   });
 
   formLink.addEventListener('click', () => {

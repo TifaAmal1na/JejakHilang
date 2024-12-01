@@ -1,11 +1,12 @@
-import { orangHilang } from '../data/dummy.js'; // Mengimpor data dummy
+import data from '../data/dummy.json'; // Mengimpor data dari dummy.json
 
+// Ekspor fungsi loadDetail sebagai default
 export default function loadDetail(id) {
   const mainContent = document.getElementById('main-content');
   mainContent.innerHTML = `<p>Loading data...</p>`;
 
   // Mencari orang hilang berdasarkan ID
-  const person = orangHilang.find(p => p.id === parseInt(id));
+  const person = data.orangHilang[0].orang_hilang.find(p => p.id === parseInt(id));
 
   if (person) {
     mainContent.innerHTML = `

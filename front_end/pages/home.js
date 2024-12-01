@@ -1,5 +1,10 @@
-import { orangHilang } from '../data/dummy.js'; // Mengimpor data dummy
-import './style.css'; 
+// Mengimpor loadDetail sebagai default
+import loadDetail from './detail'; // Mengimpor fungsi loadDetail sebagai default
+
+import data from '../data/dummy.json'; // Mengimpor data dummy.json
+
+// Mengambil data orang hilang
+const orangHilang = data.orangHilang[0].orang_hilang; // Mengakses array orang_hilang dalam orangHilang
 
 export default function loadHome() {
   const mainContent = document.getElementById('main-content');
