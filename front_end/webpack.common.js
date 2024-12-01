@@ -1,4 +1,6 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',  // Pastikan entri sudah benar
@@ -10,7 +12,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],  // Menggunakan style-loader dan css-loader
+        use: ['style-loader', 'css-loader'], // Menggunakan style-loader dan css-loader
       },
       {
         test: /\.js$/,
@@ -19,4 +21,15 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './templates/index.html',  // Pastikan path ke template sudah benar
+      favicon: './favicon.ico',  // Path ke favicon Anda
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'favicon.ico', to: 'favicon.ico' }, // Menyalin favicon ke folder dist
+      ],
+    }),
+  ],
 };

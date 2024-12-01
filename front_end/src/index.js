@@ -3,25 +3,26 @@ import '../assets/style.css';  // Sesuaikan path relatif menuju folder assets
 
 // Mengimpor modul yang diperlukan
 import loadHome from '../pages/home.js';
-import loadDetail from '../pages/detail.js';
+import loadForm from '../pages/form.js'; // Mengimpor form.js
 
-// Menambahkan kode JavaScript untuk interaktivitas (jika diperlukan)
+// Menambahkan kode JavaScript untuk interaktivitas
 document.addEventListener('DOMContentLoaded', () => {
   const homeLink = document.getElementById('home-link');
-  const detailLink = document.getElementById('detail-link');
   const formLink = document.getElementById('form-link');
   const mainContent = document.getElementById('main-content');
 
-  homeLink.addEventListener('click', () => {
-    loadHome(); // Memanggil fungsi dari home.js
+  // Tampilkan halaman home saat pertama kali membuka halaman
+  loadHome();
+
+  // Event listener untuk link Home
+  homeLink.addEventListener('click', (event) => {
+    event.preventDefault(); // Mencegah reload halaman
+    loadHome(); // Memanggil fungsi dari home.js untuk menampilkan halaman home
   });
 
-  detailLink.addEventListener('click', () => {
-    const personId = prompt('Enter person ID'); // Bisa diganti dengan ID yang lebih dinamis
-    loadDetail(personId); // Memanggil fungsi dari detail.js
-  });
-
-  formLink.addEventListener('click', () => {
-    mainContent.innerHTML = '<h2>Form Page</h2><p>Fill out the form below.</p>';
+  // Event listener untuk link Form
+  formLink.addEventListener('click', (event) => {
+    event.preventDefault(); // Mencegah reload halaman
+    loadForm(); // Memanggil fungsi dari form.js untuk menampilkan form pelaporan
   });
 });
