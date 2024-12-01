@@ -1,12 +1,29 @@
 {
-  "name": "front_end",
+  "name": "jejak-hilang",
   "version": "1.0.0",
+  "description": "Aplikasi Jejak Hilang",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-dev": "webpack serve --config webpack.dev.js --mode development",
+    "build": "webpack --config webpack.prod.js --mode production"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "front end JejakHilang"
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.7.0",
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.0",
+    "webpack-dev-server": "^4.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.0",
+    "webpack-dev-server": "^4.12.0",
+    "webpack-merge": "^6.0.1"
+  }
 }

@@ -16,61 +16,88 @@ body, h1, h2, h3, p, ul, li, a {
   }
   
   /* Header */
-  header {
-    background: #4b382a;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .header__inner {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-  }
-  
+header {
+  background: #4b382a;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between; /* Menjaga logo di kiri dan nav di kanan */
+  align-items: center;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between; /* Menjaga logo dan nav terpisah */
+  align-items: center;
+  width: 100%; /* Memastikan header memiliki lebar penuh */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nav {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__item {
+  margin-bottom: 1rem;
+}
+
+.nav__item:last-child {
+  margin-bottom: 0;
+}
+
+.nav__item a {
+  color: #000; /* Mengubah warna teks menjadi hitam */
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
   .nav {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 50px;
-    background: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    border-radius: 5px;
-  }
-  
-  .nav__list {
     display: flex;
-    flex-direction: column;
+    position: static;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    justify-content: flex-end; /* Menempatkan item navigasi di kanan */
   }
-  
+
+  .nav__list {
+    flex-direction: row;
+    margin: 0;
+  }
+
   .nav__item {
-    margin-bottom: 1rem;
+    margin: 0 1rem; /* Memberikan jarak antar item */
   }
-  
-  .nav__item:last-child {
-    margin-bottom: 0;
-  }
-  
-  .nav__item a {
-    color: #4b382a;
-  }
-  
+
   .close-btn {
-    background: transparent;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-bottom: 1rem;
+    display: none;
   }
+}
   
   @media (min-width: 768px) {
     .nav {
@@ -80,21 +107,25 @@ body, h1, h2, h3, p, ul, li, a {
       background: none;
       box-shadow: none;
       padding: 0;
+      width: 100%; /* Menambahkan lebar 100% agar memenuhi lebar kontainer */
+      justify-content: flex-end; /* Menambahkan agar item navigasi berada di sebelah kanan */
     }
   
     .nav__list {
       flex-direction: row;
+      margin: 0;
+      width: auto; /* Menambahkan agar list tidak memenuhi seluruh lebar kontainer */
     }
   
     .nav__item {
-      margin: 0 1rem;
+      margin: 0 1rem; /* Memberikan jarak antar item */
     }
   
     .close-btn {
       display: none;
     }
   }
-  
+    
   /* Main */
   main {
     padding: 2rem;
