@@ -1,77 +1,102 @@
 /* General Reset */
 body, h1, h2, h3, p, ul, li, a {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  /* Header */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header */
 header {
-  background: #4b382a;
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between; /* Menjaga logo di kiri dan nav di kanan */
-  align-items: center;
+background: #4b382a;
+color: white;
+padding: 1rem 2rem;
+display: flex;
+justify-content: space-between; /* Menjaga logo di kiri dan nav di kanan */
+align-items: center;
 }
 
 .header__inner {
-  display: flex;
-  justify-content: space-between; /* Menjaga logo dan nav terpisah */
-  align-items: center;
-  width: 100%; /* Memastikan header memiliki lebar penuh */
+display: flex;
+justify-content: space-between; /* Menjaga logo dan nav terpisah */
+align-items: center;
+width: 100%; /* Memastikan header memiliki lebar penuh */
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
+font-size: 1.5rem;
+font-weight: bold;
+color: white;
 }
 
 .nav {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 50px;
-  background: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  border-radius: 5px;
+display: none;
+position: absolute;
+right: 0;
+top: 50px;
+background: white;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+padding: 1rem;
+border-radius: 5px;
 }
 
 .nav__list {
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 
 .nav__item {
-  margin-bottom: 1rem;
+margin-bottom: 1rem;
 }
 
 .nav__item:last-child {
-  margin-bottom: 0;
+margin-bottom: 0;
 }
 
 .nav__item a {
-  color: #000; /* Mengubah warna teks menjadi hitam */
+color: #ffffff; /* Mengubah warna teks menjadi hitam */
 }
 
 .close-btn {
-  background: transparent;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  margin-bottom: 1rem;
+background: transparent;
+border: none;
+font-size: 1.2rem;
+cursor: pointer;
+margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+.nav {
+  display: flex;
+  position: static;
+  flex-direction: row;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  justify-content: flex-end; /* Menempatkan item navigasi di kanan */
+}
+
+.nav__list {
+  flex-direction: row;
+  margin: 0;
+}
+
+.nav__item {
+  margin: 0 1rem; /* Memberikan jarak antar item */
+}
+
+.close-btn {
+  display: none;
+}
 }
 
 @media (min-width: 768px) {
@@ -82,12 +107,14 @@ header {
     background: none;
     box-shadow: none;
     padding: 0;
-    justify-content: flex-end; /* Menempatkan item navigasi di kanan */
+    width: 100%; /* Menambahkan lebar 100% agar memenuhi lebar kontainer */
+    justify-content: flex-end; /* Menambahkan agar item navigasi berada di sebelah kanan */
   }
 
   .nav__list {
     flex-direction: row;
     margin: 0;
+    width: auto; /* Menambahkan agar list tidak memenuhi seluruh lebar kontainer */
   }
 
   .nav__item {
@@ -99,220 +126,242 @@ header {
   }
 }
   
-  @media (min-width: 768px) {
-    .nav {
-      display: flex;
-      position: static;
-      flex-direction: row;
-      background: none;
-      box-shadow: none;
-      padding: 0;
-      width: 100%; /* Menambahkan lebar 100% agar memenuhi lebar kontainer */
-      justify-content: flex-end; /* Menambahkan agar item navigasi berada di sebelah kanan */
-    }
-  
-    .nav__list {
-      flex-direction: row;
-      margin: 0;
-      width: auto; /* Menambahkan agar list tidak memenuhi seluruh lebar kontainer */
-    }
-  
-    .nav__item {
-      margin: 0 1rem; /* Memberikan jarak antar item */
-    }
-  
-    .close-btn {
-      display: none;
-    }
-  }
-    
-  /* Main */
-  main {
-    padding: 2rem;
-  }
-  
-  /* Hero Section */
-  .hero {
-    text-align: center;
-    padding: 2rem;
-    background: #4b382a;
-    color: white;
-    border-radius: 5px;
-  }
-  
-  .hero h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero p {
-    font-size: 1rem;
-  }
-  
-  /* Missing List */
-  .missing-list {
-    margin-top: 2rem;
-  }
-  
-  .missing-list h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-  
-  .person {
-    background: white;
-    padding: 1rem;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .person img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-  
-  .person p {
-    margin: 1rem 0;
-    font-weight: bold;
-  }
-  
-  .detail-link {
-    color: #4b382a;
-  }
-  
-  /* Detail Section */
-  .detail {
-    display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .detail .image img {
-    max-width: 300px;
-    border-radius: 5px;
-  }
-  
-  .detail .info h2 {
-    margin-bottom: 1rem;
-  }
-  
-  .detail .info p {
-    margin-bottom: 0.5rem;
-  }
-  
-  .status-btn {
-    background: #4b382a;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* Style untuk Form Pelaporan Orang Hilang */
+/* Main */
+main {
+  padding: 1rem;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 1rem;
+  background: #4b382a;
+  color: white;
+  border-radius: 80px;
+}
+
+.hero h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1rem;
+}
+
+/* Missing List */
+.missing-list {
+  margin-top: 2rem;
+}
+
+.missing-list h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.person {
+  background: white;
+  padding: 1rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.person img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.person p {
+  margin: 0rem 0;
+  font-weight: bold;
+}
+
+.detail-link {
+  color: #4b382a;
+}
+
+/* Detail Section */
+.detail {
+  display: flex;
+  gap: 0rem;
+  margin-top: 1rem;
+}
+
+.detail .image img {
+  max-width: 200px;
+  border-radius: 10px;
+}
+
+.detail .info h2 {
+  margin-bottom: 0.5rem;
+}
+
+.detail .info p {
+  margin-bottom: 0.5rem;
+}
+
+.status-btn {
+  background: #4b382a;
+  color: white;
+  padding: 1rem 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Style untuk Form Pelaporan Orang Hilang */
 .form-section {
-  margin: 20px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+margin: 20px auto;
+max-width: 600px;
+padding: 40px;
+background-color: #fffaf0;
+border-radius: 16px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+border: 1px solid #eee;
 }
 
 h2 {
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  color: #333;
-  text-align: center;
+font-size: 2em;
+margin-bottom: 25px;
+color: #4b382a;
+text-align: center;
+font-weight: 700;
 }
 
 .form-group {
-  margin-bottom: 15px;
+margin-bottom: 20px;
 }
 
 label {
-  display: block;
-  font-size: 1em;
-  color: #555;
-  margin-bottom: 5px;
+display: block;
+font-size: 1.1em;
+color: #4b382a;
+margin-bottom: 8px;
+font-weight: 600;
 }
 
 input[type="text"],
 input[type="url"],
 input[type="date"],
 textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
+width: 100%;
+padding: 12px 15px;
+font-size: 1em;
+border: 1px solid #ddd;
+border-radius: 12px;
+box-sizing: border-box;
+transition: box-shadow 0.3s ease, border-color 0.3s ease;
+background-color: #fdfdfd;
+}
+
+input:focus,
+textarea:focus {
+border-color: #4b382a;
+box-shadow: 0 3px 10px rgba(75, 56, 42, 0.2);
+outline: none;
 }
 
 textarea {
-  height: 150px;
-  resize: vertical;
+height: 140px;
+resize: vertical;
 }
 
 button {
-  background-color: #4b382a;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 1em;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 10px;
-  transition: background-color 0.3s;
+background-color: #4b382a;
+color: #fff;
+border: none;
+padding: 12px;
+font-size: 1.1em;
+font-weight: 600;
+border-radius: 12px;
+cursor: pointer;
+width: 100%;
+margin-top: 15px;
+transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
-  background-color: #4b382a;
+background-color: #6a5042;
+box-shadow: 0 4px 12px rgba(75, 56, 42, 0.4);
+transform: translateY(-2px);
 }
 
 button:active {
-  background-color: #4b382a;
+transform: scale(0.97);
+box-shadow: 0 2px 6px rgba(75, 56, 42, 0.3);
+}
+
+/* Animasi lembut saat input muncul */
+.form-section {
+animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
 }
 
 /* Responsif untuk layar kecil */
-@media (max-width: 768px) {
-  .form-section {
-    padding: 15px;
-  }
-
-  h2 {
-    font-size: 1.5em;
-  }
-
-  input[type="text"],
-  input[type="url"],
-  input[type="date"],
-  textarea {
-    font-size: 0.9em;
-  }
-
-  button {
-    padding: 10px 15px;
-    font-size: 0.9em;
-  }
+@media (max-width: 600px) {
+.form-section {
+  padding: 30px;
 }
 
-  /* Footer */
-  footer {
-    background: #4b382a;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-  }
-  
-  
+h2 {
+  font-size: 1.6em;
+}
+
+button {
+  font-size: 1em;
+  padding: 10px;
+}
+}
+
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+.form-section {
+  padding: 15px;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="date"],
+textarea {
+  font-size: 0.9em;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 0.9em;
+}
+}
+
+/* Footer */
+footer {
+  background: #4b382a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
