@@ -11,14 +11,14 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   color: #333;
 }
 
 /* Header */
 header {
-background: #4b382a;
-color: white;
+background: #134B70;
+color: #33363b;
 padding: 1rem 2rem;
 display: flex;
 justify-content: space-between; /* Menjaga logo di kiri dan nav di kanan */
@@ -125,7 +125,8 @@ margin-bottom: 1rem;
     display: none;
   }
 }
-  
+
+
 /* Main */
 main {
   padding: 1rem;
@@ -135,9 +136,9 @@ main {
 .hero {
   text-align: center;
   padding: 1rem;
-  background: #4b382a;
-  color: white;
-  border-radius: 80px;
+  background: #508C9B;
+  color: #ffffff;
+  border-radius: 20px;
 }
 
 .hero h1 {
@@ -166,7 +167,7 @@ main {
 }
 
 .person {
-  background: white;
+  background: #508C9B;
   padding: 1rem;
   border-radius: 20px;
   text-align: center;
@@ -183,6 +184,12 @@ main {
 .person p {
   margin: 0rem 0;
   font-weight: bold;
+  color: white;
+}
+
+.person a {
+  color: white;
+  text-decoration: none; /* Menghilangkan garis bawah */
 }
 
 .detail-link {
@@ -223,7 +230,7 @@ main {
 margin: 20px auto;
 max-width: 600px;
 padding: 40px;
-background-color: #fffaf0;
+background-color: #508C9B;
 border-radius: 16px;
 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 border: 1px solid #eee;
@@ -232,7 +239,7 @@ border: 1px solid #eee;
 h2 {
 font-size: 2em;
 margin-bottom: 25px;
-color: #4b382a;
+color: #ffffff;
 text-align: center;
 font-weight: 700;
 }
@@ -244,7 +251,7 @@ margin-bottom: 20px;
 label {
 display: block;
 font-size: 1.1em;
-color: #4b382a;
+color: #ffffff;
 margin-bottom: 8px;
 font-weight: 600;
 }
@@ -265,7 +272,7 @@ background-color: #fdfdfd;
 
 input:focus,
 textarea:focus {
-border-color: #4b382a;
+border-color: #134B70;
 box-shadow: 0 3px 10px rgba(75, 56, 42, 0.2);
 outline: none;
 }
@@ -276,8 +283,8 @@ resize: vertical;
 }
 
 button {
-background-color: #4b382a;
-color: #fff;
+background-color: #134B70;
+color: #ffffff;
 border: none;
 padding: 12px;
 font-size: 1.1em;
@@ -290,7 +297,7 @@ transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s eas
 }
 
 button:hover {
-background-color: #6a5042;
+background-color: #134B70;
 box-shadow: 0 4px 12px rgba(75, 56, 42, 0.4);
 transform: translateY(-2px);
 }
@@ -358,7 +365,7 @@ button {
 
 /* Footer */
 footer {
-  background: #4b382a;
+  background: #134B70;
   color: white;
   text-align: center;
   padding: 1rem;
