@@ -18,7 +18,7 @@ body {
 
 /* Header */
 header {
-background: #134B70;
+background: #3664b6;
 color: #33363b;
 padding: 1rem 2rem;
 display: flex;
@@ -205,7 +205,9 @@ main {
 .missing-list h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: #3664b6;
 }
+
 
 .list {
   display: grid;
@@ -214,7 +216,7 @@ main {
 }
 
 .person {
-  background: #508C9B;
+  background: #569ef4;
   padding: 1rem;
   border-radius: 20px;
   text-align: center;
@@ -251,7 +253,7 @@ main {
   padding: 1.5rem; /* Memberikan ruang internal */
   border: 1px solid #e0e0e0; /* Memberikan garis pembatas ringan */
   border-radius: 10px; /* Membuat sudut melengkung */
-  background-color: #508C9B; /* Memberikan warna latar belakang lembut */
+  background-color: #569ef4; /* Memberikan warna latar belakang lembut */
   box-shadow: 0 4px 0px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
 }
 
@@ -281,7 +283,7 @@ main {
 }
 
 .status-btn {
-  background: #134B70;
+  background: #3664b6;
   color: white;
   padding: 1rem 1.5rem; /* Memberikan ruang internal yang lebih proporsional */
   border: none;
@@ -293,7 +295,7 @@ main {
 }
 
 .status-btn:hover {
-  background: #508C9B; /* Warna lebih terang untuk hover */
+  background: #3664b6; /* Warna lebih terang untuk hover */
   transform: scale(1.05); /* Efek zoom ringan saat dihover */
 }
 
@@ -329,7 +331,7 @@ main {
 margin: 20px auto;
 max-width: 600px;
 padding: 40px;
-background-color: #508C9B;
+background-color: #569ef4;
 border-radius: 16px;
 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 border: 1px solid #eee;
@@ -371,7 +373,7 @@ background-color: #fdfdfd;
 
 input:focus,
 textarea:focus {
-border-color: #134B70;
+border-color: #3664b6;
 box-shadow: 0 3px 10px rgba(75, 56, 42, 0.2);
 outline: none;
 }
@@ -382,7 +384,7 @@ resize: vertical;
 }
 
 button {
-background-color: #134B70;
+background-color: #3664b6;
 color: #ffffff;
 border: none;
 padding: 12px;
@@ -396,7 +398,7 @@ transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s eas
 }
 
 button:hover {
-background-color: #134B70;
+background-color: #3664b6;
 box-shadow: 0 4px 12px rgba(75, 56, 42, 0.4);
 transform: translateY(-2px);
 }
@@ -477,7 +479,7 @@ button {
 
 /* Footer */
 footer {
-  background: #134B70;
+  background: #3664b6;
   color: white;
   text-align: center;
   padding: 1rem;
