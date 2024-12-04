@@ -9,10 +9,6 @@ const orangHilang = data.orangHilang[0].orang_hilang; // Mengakses array orang_h
 export default function loadHome() {
   const mainContent = document.getElementById('main-content');
   mainContent.innerHTML = `
-    <section class="hero">
-      <h1>Layanan Pencarian Orang Hilang</h1>
-      <p>Kami memahami sakit hati terkait dengan orang-orang tercinta yang telah lama hilang. Libatkan kami untuk membantu menemukan keluarga dan orang-orang yang telah lama hilang dari hidup Anda.</p>
-    </section>
 
     <section class="missing-list">
       <h2>Daftar Orang Hilang</h2>
