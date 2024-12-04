@@ -246,30 +246,82 @@ main {
 /* Detail Section */
 .detail {
   display: flex;
-  gap: 0rem;
-  margin-top: 1rem;
+  gap: 2rem; /* Memberikan jarak lebih antarelemen */
+  margin-top: 2rem;
+  padding: 1.5rem; /* Memberikan ruang internal */
+  border: 1px solid #e0e0e0; /* Memberikan garis pembatas ringan */
+  border-radius: 10px; /* Membuat sudut melengkung */
+  background-color: #508C9B; /* Memberikan warna latar belakang lembut */
+  box-shadow: 0 4px 0px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
 }
 
 .detail .image img {
-  max-width: 200px;
+  max-width: 250px; /* Atur ukuran sesuai kebutuhan */
+  height: auto; /* Pastikan proporsi asli terjaga */
   border-radius: 10px;
+  object-fit: cover; /* Pastikan gambar proporsional tanpa distorsi */
+  box-shadow: 0 2px 0px rgba(0, 0, 0, 0.1); /* Tambahkan sedikit bayangan */
+}
+
+.detail .info {
+  flex: 1; /* Memastikan info mengambil ruang sisa */
 }
 
 .detail .info h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem; /* Meningkatkan ukuran font */
+  color: #ffffff; /* Warna yang sesuai dengan tombol */
 }
 
 .detail .info p {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #ffffff; /* Warna teks abu-abu gelap untuk keterbacaan */
+  line-height: 1.5; /* Menambahkan jarak antar baris */
 }
 
 .status-btn {
-  background: #4b382a;
+  background: #134B70;
   color: white;
-  padding: 1rem 1rem;
+  padding: 1rem 1.5rem; /* Memberikan ruang internal yang lebih proporsional */
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease; /* Menambahkan transisi untuk efek hover */
+}
+
+.status-btn:hover {
+  background: #508C9B; /* Warna lebih terang untuk hover */
+  transform: scale(1.05); /* Efek zoom ringan saat dihover */
+}
+
+/* Media Query for Mobile (Max Width: 768px) */
+@media (max-width: 768px) {
+  .detail {
+    flex-direction: column; /* Ubah tata letak menjadi kolom */
+    gap: 1rem; /* Kurangi jarak antar elemen */
+    padding: 1rem; /* Sesuaikan ruang internal */
+  }
+
+  .detail .image img {
+    max-width: 100%; /* Biarkan gambar mengambil lebar penuh */
+    height: auto; /* Pastikan proporsinya tetap */
+  }
+
+  .detail .info h2 {
+    font-size: 1.5rem; /* Kurangi ukuran font agar sesuai di layar kecil */
+  }
+
+  .detail .info p {
+    font-size: 0.9rem; /* Kurangi ukuran font untuk teks deskripsi */
+  }
+
+  .status-btn {
+    padding: 0.8rem 1.2rem; /* Sesuaikan ukuran tombol */
+    font-size: 0.9rem; /* Kurangi ukuran font tombol */
+  }
 }
 
 /* Style untuk Form Pelaporan Orang Hilang */
