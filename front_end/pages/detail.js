@@ -15,7 +15,7 @@ export default function loadDetail(id) {
           <img src="${person.foto}" alt="${person.nama}">
         </div>
         <div class="info">
-          <h2>Nama: ${person.nama}</h2>
+          <h2>${person.nama}</h2>
           <p>Tanggal Hilang: ${person.tanggal_hilang}</p>
           <p>Ciri-ciri: ${person.ciri}</p>
           <p>Tanggal Ditemukan: ${person.tanggal_ditemukan || 'Belum ditemukan'}</p>
