@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "c575b801-fba6-48f6-a269-5658a1f8cb93",
+		"name": "JejakHilang",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27709459",
+		"_collection_link": "https://capstone-jejakhilang.postman.co/workspace/JejakHilang~83780e32-c1d5-4e07-b5ba-fa4ff1c797bb/collection/27709459-c575b801-fba6-48f6-a269-5658a1f8cb93?action=share&source=collection_link&creator=27709459"
+	},
+	"item": [
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "Get Notification",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/notifications",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orang Hilang",
+			"item": [
+				{
+					"name": "Get Orang Hilang",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/orang_hilang",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"orang_hilang"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Orang Hilang",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"Emily Davis\",\r\n    \"ciri\": \"Tall, curly red hair, fair skin\",\r\n    \"tanggal_hilang\": \"2023-10-25\",\r\n    \"tanggal_ditemukan\": \"0000-00-00\",\r\n    \"foto\": \"https://example.com/emilydavis.jpg\",\r\n    \"status\": \"belum\",\r\n    \"id_pelaporan\": 4\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/orang_hilang/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"orang_hilang",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pelaporan",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/orang_hilang/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"orang_hilang",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Laporan",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nama\": \"Jeni\",\r\n        \"ciri\": \"abu abu\",\r\n        \"tanggal_hilang\": \"2024-11-30\",\r\n        \"tanggal_ditemukan\": \"2024-12-31\",\r\n        \"foto\": \"jeni.jpg\",\r\n        \"status\": \"sudah\",\r\n        \"id_pelaporan\": 5\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/orang_hilang/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"orang_hilang",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Laporan",
+			"item": [
+				{
+					"name": "Get Pelaporan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/pelaporan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pelaporan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Pelaporan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\":\"jeni\", \r\n    \"ciri\":\"Cantik jelita\", \r\n    \"tanggal_hilang\":\"2024-11-30\", \r\n    \"foto\":\"jeni.jpg\", \r\n    \"nomer_pelapor\":\"0988765\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pelaporan/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pelaporan",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pelaporan",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/pelaporan/6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pelaporan",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Laporan",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\":\"jeni cantik\", \r\n    \"ciri\":\"Cantik jelita, abu abu\", \r\n    \"tanggal_hilang\":\"2024-11-30\", \r\n    \"foto\":\"jeni.jpg\", \r\n    \"nomer_pelapor\":\"0988765\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pelaporan/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pelaporan",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
