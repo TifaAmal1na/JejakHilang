@@ -17,10 +17,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Tampilkan halaman home saat pertama kali membuka halaman
   loadHome();
 
+  const heroElement = document.querySelector('.hero');
+  if (heroElement) {
+    heroElement.style.display = 'flex'; // Pastikan .hero terlihat di halaman Home
+  }
+
   // Event listener untuk link Home
   homeLink.addEventListener('click', (event) => {
     event.preventDefault(); // Mencegah reload halaman
     loadHome(); // Memanggil fungsi dari home.js untuk menampilkan halaman home
+    
+    if (heroElement) {
+      heroElement.style.display = 'flex';
+    }
+    
     drawer.classList.remove('active'); // Tutup menu drawer setelah klik
   });
 
@@ -28,6 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
   formLink.addEventListener('click', (event) => {
     event.preventDefault(); // Mencegah reload halaman
     loadForm(); // Memanggil fungsi dari form.js untuk menampilkan form pelaporan
+    
+    if (heroElement) {
+      heroElement.style.display = 'none'; // Menyembunyikan .hero hanya di halaman form
+    }
+    
     drawer.classList.remove('active'); // Tutup menu drawer setelah klik
   });
 
