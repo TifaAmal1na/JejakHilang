@@ -38,6 +38,12 @@ export default function loadForm() {
       const foto = document.getElementById('foto').value;
       const tanggalHilang = document.getElementById('tanggal_hilang').value;
       const ciri = document.getElementById('ciri').value;
+
+      // Validasi form: Pastikan semua field diisi
+    if (!nama || !foto || !tanggalHilang || !ciri) {
+      alert('Semua field harus diisi.');
+      return; // Hentikan form submission jika ada field kosong
+    }
   
       // Kirim data ke server atau simpan ke lokal
       console.log('Form Submitted:', { nama, foto, tanggalHilang, ciri });
