@@ -4,7 +4,6 @@ const path = require('path');
 const app = express();
 
 // Import Routes
-const pelaporanRoutes = require('./routes/laporanRoutes');
 const usersRoutes = require('./routes/usersRoutes');
 const notificationsRoutes = require('./routes/notificationsRoutes');
 const hilangRoutes = require('./routes/hilangRoutes');
@@ -18,8 +17,10 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
+// Melayani file di folder 'uploads'
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 // Routing untuk API
-app.use('/api/pelaporan', pelaporanRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/notifications', notificationsRoutes);
 app.use('/api/orang_hilang', hilangRoutes);

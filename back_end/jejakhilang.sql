@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2024 at 05:08 AM
+-- Generation Time: Dec 07, 2024 at 10:12 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -54,16 +54,20 @@ CREATE TABLE `orang_hilang` (
   `tanggal_hilang` date NOT NULL,
   `tanggal_ditemukan` date NOT NULL,
   `foto` varchar(255) NOT NULL,
-  `status` enum('sudah','belum') NOT NULL
+  `status` enum('sudah','belum') NOT NULL,
+  `nomer_pelapor` int(13) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `orang_hilang`
 --
 
-INSERT INTO `orang_hilang` (`id`, `nama`, `ciri`, `tanggal_hilang`, `tanggal_ditemukan`, `foto`, `status`) VALUES
-(1, 'John Doe', 'Tall, blue eyes, brown hair', '2023-10-10', '2024-11-15', 'https://example.com/johndoe.jpg', 'sudah'),
-(2, 'Jane Smith', 'Short, blonde hair, wearing glasses', '2023-11-01', '2024-11-15', 'https://example.com/janesmith.jpg', 'sudah');
+INSERT INTO `orang_hilang` (`id`, `nama`, `ciri`, `tanggal_hilang`, `tanggal_ditemukan`, `foto`, `status`, `nomer_pelapor`) VALUES
+(1, 'John Doe', 'Tall, blue eyes, brown hair', '2023-10-10', '2024-11-15', 'https://example.com/johndoe.jpg', 'sudah', 111111),
+(2, 'Jane Smith', 'Short, blonde hair, wearing glasses', '2023-11-01', '2024-11-15', 'https://example.com/janesmith.jpg', 'sudah', 11111),
+(6, 'Emily Davis', 'Tall, curly red hair, fair skin', '2023-10-25', '0000-00-00', 'https://example.com/emilydavis.jpg', 'belum', 12121),
+(7, 'Emily Davis', 'Tall, curly red hair, fair skin', '2023-10-25', '0000-00-00', 'https://example.com/emilydavis.jpg', 'belum', 2222),
+(8, 'Emily wanjay', 'Tall, curly red hair, fair skin', '2023-10-25', '0000-00-00', 'https://example.com/emilydavis.jpg', 'belum', 4121122);
 
 -- --------------------------------------------------------
 
@@ -121,7 +125,7 @@ ALTER TABLE `notification`
 -- AUTO_INCREMENT for table `orang_hilang`
 --
 ALTER TABLE `orang_hilang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`

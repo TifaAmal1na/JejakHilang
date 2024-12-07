@@ -1,4 +1,19 @@
 const db = require('../db');
+const multer = require('multer');
+const path = require('path');
+
+// Konfigurasi Multer
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/'); // Folder untuk menyimpan file
+    },
+    filename: (req, file, cb) => {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        cb(null, uniqueSuffix + path.extname(file.originalname)); // Format nama file
+    }
+});
+
+const upload = multer({ storage });
 
 // Get all records from orang_hilang
 exports.getAllHilang = (req, res) => {
@@ -13,35 +28,39 @@ exports.getAllHilang = (req, res) => {
 };
 
 // Add a new record to orang_hilang
-exports.addHilang = (req, res) => {
-    const { nama, ciri, tanggal_hilang, tanggal_ditemukan, foto, status, id_pelaporan } = req.body;
+exports.addHilang = [
+    upload.single('foto'), // Middleware untuk upload file
+    (req, res) => {
+        const { nama, ciri, tanggal_hilang, tanggal_ditemukan, status, nomer_pelapor } = req.body;
+        const foto = req.file ? req.file.filename : null; // Nama file yang diupload
 
-    const query = `
-        INSERT INTO orang_hilang (nama, ciri, tanggal_hilang, tanggal_ditemukan, foto, status, id_pelaporan) 
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-    `;
+        const query = `
+            INSERT INTO orang_hilang (nama, ciri, tanggal_hilang, tanggal_ditemukan, foto, status, nomer_pelapor) 
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        `;
 
-    db.query(query, [nama, ciri, tanggal_hilang, tanggal_ditemukan, foto, status, id_pelaporan], (err, result) => {
-        if (err) {
-            console.error('Error inserting data:', err);
-            return res.status(500).json({ error: err.message });
-        }
-        res.status(201).json({ message: 'Record added successfully', id: result.insertId });
-    });
-};
+        db.query(query, [nama, ciri, tanggal_hilang, tanggal_ditemukan, foto, status, nomer_pelapor], (err, result) => {
+            if (err) {
+                console.error('Error inserting data:', err);
+                return res.status(500).json({ error: err.message });
+            }
+            res.status(201).json({ message: 'Record added successfully', id: result.insertId });
+        });
+    }
+];
 
 // Update an existing record in orang_hilang
 exports.updateHilang = (req, res) => {
     const { id } = req.params;
-    const { nama, ciri, tanggal_hilang, tanggal_ditemukan, foto, status, id_pelaporan } = req.body;
+    const { nama, ciri, tanggal_hilang, tanggal_ditemukan, foto, status, nomer_pelapor } = req.body;
 
     const query = `
         UPDATE orang_hilang 
-        SET nama = ?, ciri = ?, tanggal_hilang = ?, tanggal_ditemukan = ?, foto = ?, status = ?, id_pelaporan = ? 
+        SET nama = ?, ciri = ?, tanggal_hilang = ?, tanggal_ditemukan = ?, foto = ?, status = ?, nomer_pelapor = ? 
         WHERE id = ?
     `;
 
-    db.query(query, [nama, ciri, tanggal_hilang, tanggal_ditemukan, foto, status, id_pelaporan, id], (err) => {
+    db.query(query, [nama, ciri, tanggal_hilang, tanggal_ditemukan, foto, status, nomer_pelapor, id], (err) => {
         if (err) {
             console.error('Error updating data:', err);
             return res.status(500).json({ error: err.message });
