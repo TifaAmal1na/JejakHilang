@@ -6,11 +6,14 @@ module.exports = merge(common, {
   mode: 'development',
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'),  // Direktori yang akan dilayani oleh dev server
+      directory: path.join(__dirname, 'dist'),  // Direktori build
     },
     compress: true,
     port: 9001,
-    open: true
+    open: true,
+    proxy: {
+      '/api': 'http://localhost:3000', // Arahkan permintaan API ke backend
+    },
   },
-  devtool: 'inline-source-map'
+  devtool: 'inline-source-map',
 });

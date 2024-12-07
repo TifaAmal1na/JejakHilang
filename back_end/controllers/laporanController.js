@@ -2,15 +2,20 @@ const db = require('../db');
 
 // Get all pelaporan
 exports.getPelaporan = (req, res) => {
+    console.log('GET /api/pelaporan called'); // Log untuk memastikan fungsi dipanggil
+
     const query = 'SELECT * FROM pelaporan';
     db.query(query, (err, results) => {
         if (err) {
+            console.error('Database query error:', err.message); // Log jika ada error query
             res.status(500).json({ error: err.message });
         } else {
+            console.log('Query results:', results); // Log hasil query
             res.status(200).json(results);
         }
     });
 };
+
 
 // Add a new pelaporan
 exports.addPelaporan = (req, res) => {
@@ -90,5 +95,3 @@ exports.updatePelaporan = (req, res) => {
         res.status(200).json({ message: `Pelaporan with ID ${id} updated successfully` });
     });
 };
-
-

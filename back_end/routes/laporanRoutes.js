@@ -5,7 +5,10 @@ const router = express.Router();
 const pelaporanController = require('../controllers/laporanController');
 
 // GET untuk mengambil pelaporan
-router.get('/pelaporan', pelaporanController.getPelaporan);
+router.get('/pelaporan', (req, res) => {
+    res.status(200).json({ message: 'Route works' });
+});
+
 
 // POST untuk menambah pelaporan
 router.post('/add', pelaporanController.addPelaporan);
