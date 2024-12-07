@@ -17,31 +17,41 @@ exports.getPelaporan = (req, res) => {
 };
 
 
-// Add a new pelaporan
+
+// Add a new pelaporan (menggunakan gambar yang diupload)
 exports.addPelaporan = (req, res) => {
     console.log('Received POST request with body:', req.body);
-    try {
-        const { nama, ciri, tanggal_hilang, foto, nomer_pelapor } = req.body;
+    console.log('File uploaded:', req.file); // Menampilkan informasi file yang di-upload
 
-        // Validasi foto
-        if (!foto) {
+    try {
+        const { nama, ciri, tanggal_hilang, nomer_pelapor } = req.body;
+
+        // Validasi apakah file ada
+        if (!req.file) {
             return res.status(400).json({ error: "Foto is required" });
         }
 
+        // Dapatkan path file yang di-upload
+        const fotoPath = req.file ? req.file.path : ''; // Path file yang di-upload di server
+
+        // Simpan data pelaporan ke database
         const query = 'INSERT INTO pelaporan (nama, ciri, tanggal_hilang, foto, nomer_pelapor) VALUES (?, ?, ?, ?, ?)';
-        db.query(query, [nama, ciri, tanggal_hilang, foto, nomer_pelapor], (err, result) => {
+        db.query(query, [nama, ciri, tanggal_hilang, fotoPath, nomer_pelapor], (err, result) => {
             if (err) {
                 console.error('Error executing query:', err);
-                res.status(500).json({ error: err.message });
-            } else {
-                res.status(201).json({ message: 'Laporan added successfully', id: result.insertId });
+                return res.status(500).json({ error: err.message });
             }
+
+            // Mengembalikan response sukses
+            res.status(201).json({ message: 'Laporan added successfully', id: result.insertId });
         });
     } catch (error) {
         console.error('Invalid JSON:', error);
         res.status(400).json({ error: "Invalid JSON format" });
     }
 };
+
+
 
 // Delete a pelaporan by ID
 exports.deletePelaporan = (req, res) => {

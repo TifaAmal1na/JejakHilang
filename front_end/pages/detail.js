@@ -1,6 +1,3 @@
-// detail.js
-
-// URL API yang sesuai
 const baseUrl = 'http://localhost:3000/api/orang_hilang';
 
 export default function loadDetail(id) {
