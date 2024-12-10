@@ -1,6 +1,3 @@
-// detail.js
-
-// URL API yang sesuai
 const baseUrl = 'http://localhost:3000/api/orang_hilang';
 
 export default function loadDetail(id) {
@@ -24,6 +21,7 @@ export default function loadDetail(id) {
               <h2>${person.nama}</h2>
               <p><strong>Tanggal Hilang:</strong> ${new Date(person.tanggal_hilang).toLocaleDateString()}</p>
               <p><strong>Ciri-ciri:</strong> ${person.ciri}</p>
+              <p><strong>Nomor Pelapor:</strong> ${person.nomer_pelapor}</p>
               <p><strong>Tanggal Ditemukan:</strong> ${
                 person.tanggal_ditemukan === "0000-00-00" ? "Belum ditemukan" : new Date(person.tanggal_ditemukan).toLocaleDateString()
               }</p>
