@@ -18,7 +18,7 @@ export default function loadDetail(id) {
         mainContent.innerHTML = `
           <section class="detail">
             <div class="image">
-              <img src="${person.foto}" alt="${person.nama}">
+              <img src="http://localhost:3000/uploads/${person.foto}" alt="${person.nama}">
             </div>
             <div class="info">
               <h2>${person.nama}</h2>
