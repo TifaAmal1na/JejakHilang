@@ -26,7 +26,7 @@ export default function loadHome() {
         const personCard = document.createElement('div');
         personCard.classList.add('person');
         personCard.innerHTML = `
-          <img src="${person.foto}" alt="${person.nama}">
+          <img src="http://localhost:3000/uploads/${person.foto}" alt="${person.nama}">
           <p>${person.nama}</p>
           <a href="#" data-id="${person.id}" class="detail-link">View More >></a>
         `;
