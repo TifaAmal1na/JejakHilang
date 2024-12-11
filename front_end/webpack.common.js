@@ -28,7 +28,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'favicon.ico', to: 'favicon.ico' }, // Menyalin favicon ke folder dist
+        { from: 'favicon.ico', to: 'favicon.ico' },
+        { from: 'assets', to: 'assets' },
       ],
     }),
   ],

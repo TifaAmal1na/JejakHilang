@@ -4,14 +4,14 @@ Website JejakHilang adalah aplikasi berbasis web yang menggunakan **Node.js (Exp
 
 ## Tools yang Dibutuhkan
 
-Pastikan Anda sudah menginstal **Node.js**, **MySQL**, dan **npm** (Node Package Manager) di laptop Anda.
+Pastikan Anda sudah menginstal **Node.js**, **MySQL**, dan **npm** (Node Package Manager) di Laptop Anda.
 
 ## Cara Menjalankan Proyek
 
 Untuk menjalankan proyek ini, ikuti langkah-langkah berikut:
 
 1. **Mengimpor Database ke MySQL**:  
-   Sebelum menjalankan back-end, pastikan Anda sudah membuat database bernama jejakhilang dan mengimpor file SQL yang diperlukan yang terdapat pada folder back_end.
+   Sebelum menjalankan back-end, pastikan Anda sudah membuat database bernama `jejakhilang` dan mengimpor file SQL yang diperlukan yang terdapat pada folder `back_end`.
 
 2. **Menjalankan Front End**:  
    1. Masuk ke folder `front_end`:
