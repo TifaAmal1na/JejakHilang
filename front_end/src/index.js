@@ -3,7 +3,8 @@ import '../assets/style.css'; // Sesuaikan path relatif menuju folder assets
 
 // Mengimpor modul yang diperlukan
 import loadHome from '../pages/home.js';
-import loadForm from '../pages/form.js'; // Mengimpor form.js
+import loadForm from '../pages/form.js'; 
+import loadLogin from '../pages/login.js';
 
 // Menambahkan kode JavaScript untuk interaktivitas
 document.addEventListener('DOMContentLoaded', () => {
@@ -54,5 +55,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event listener untuk menutup menu navigasi (drawer)
   closeDrawer.addEventListener('click', () => {
     drawer.classList.remove('active'); // Hapus kelas untuk menyembunyikan drawer
+  });
+});
+
+
+// Menambahkan kode JavaScript untuk interaktivitas
+document.addEventListener('DOMContentLoaded', () => {
+  const loginBtn = document.getElementById('login-btn');
+
+  // Event listener untuk menampilkan form login
+  loginBtn.addEventListener('click', () => {
+      loadLogin(); // Memanggil loadLogin dari login.js
   });
 });
