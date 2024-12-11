@@ -17,7 +17,7 @@ const upload = multer({ storage });
 
 // Get all records from orang_hilang
 exports.getAllHilang = (req, res) => {
-    const query = 'SELECT * FROM orang_hilang';
+    const query = "SELECT * FROM orang_hilang WHERE status = 'belum'";
     db.query(query, (err, results) => {
         if (err) {
             console.error('Error fetching data:', err);
@@ -31,23 +31,29 @@ exports.getAllHilang = (req, res) => {
 exports.addHilang = [
     upload.single('foto'), // Middleware untuk upload file
     (req, res) => {
-        const { nama, ciri, tanggal_hilang, tanggal_ditemukan, status, nomer_pelapor } = req.body;
-        const foto = req.file ? req.file.filename : null; // Nama file yang diupload
-
-        const query = `
-            INSERT INTO orang_hilang (nama, ciri, tanggal_hilang, tanggal_ditemukan, foto, status, nomer_pelapor) 
-            VALUES (?, ?, ?, ?, ?, ?, ?)
-        `;
-
-        db.query(query, [nama, ciri, tanggal_hilang, tanggal_ditemukan, foto, status, nomer_pelapor], (err, result) => {
-            if (err) {
-                console.error('Error inserting data:', err);
-                return res.status(500).json({ error: err.message });
-            }
-            res.status(201).json({ message: 'Record added successfully', id: result.insertId });
-        });
-    }
-];
+      const { nama, ciri, tanggal_hilang, nomer_pelapor } = req.body;
+      const tanggal_ditemukan = '0000-00-00'; // Default tanggal_ditemukan
+      const status = 'Belum'; // Default status
+      const foto = req.file ? req.file.filename : null; // Nama file yang diupload
+  
+      const query = `
+        INSERT INTO orang_hilang (nama, ciri, tanggal_hilang, tanggal_ditemukan, foto, status, nomer_pelapor) 
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+      `;
+  
+      db.query(
+        query,
+        [nama, ciri, tanggal_hilang, tanggal_ditemukan, foto, status, nomer_pelapor],
+        (err, result) => {
+          if (err) {
+            console.error('Error inserting data:', err);
+            return res.status(500).json({ error: err.message });
+          }
+          res.status(201).json({ message: 'Record added successfully', id: result.insertId });
+        }
+      );
+    },
+  ];  
 
 // Update an existing record in orang_hilang
 exports.updateHilang = (req, res) => {

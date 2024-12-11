@@ -25,6 +25,7 @@ app.use('/api/users', usersRoutes);
 app.use('/api/notifications', notificationsRoutes);
 app.use('/api/orang_hilang', hilangRoutes);
 
+
 // Melayani file frontend (Webpack build output di folder frontend/dist)
 app.use(express.static(path.resolve(__dirname, '../front_end/dist')));
 

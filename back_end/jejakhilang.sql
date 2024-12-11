@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2024 at 10:12 AM
+-- Generation Time: Dec 10, 2024 at 10:31 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,14 +33,6 @@ CREATE TABLE `notification` (
   `deskripsi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `notification`
---
-
-INSERT INTO `notification` (`id`, `id_orang`, `deskripsi`) VALUES
-(1, 1, 'Joe sudah ditemukan'),
-(2, 2, 'Jane sudah ditemukan');
-
 -- --------------------------------------------------------
 
 --
@@ -54,7 +46,7 @@ CREATE TABLE `orang_hilang` (
   `tanggal_hilang` date NOT NULL,
   `tanggal_ditemukan` date NOT NULL,
   `foto` varchar(255) NOT NULL,
-  `status` enum('sudah','belum') NOT NULL,
+  `status` enum('sudah','belum') DEFAULT 'belum',
   `nomer_pelapor` int(13) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -63,11 +55,10 @@ CREATE TABLE `orang_hilang` (
 --
 
 INSERT INTO `orang_hilang` (`id`, `nama`, `ciri`, `tanggal_hilang`, `tanggal_ditemukan`, `foto`, `status`, `nomer_pelapor`) VALUES
-(1, 'John Doe', 'Tall, blue eyes, brown hair', '2023-10-10', '2024-11-15', 'https://example.com/johndoe.jpg', 'sudah', 111111),
-(2, 'Jane Smith', 'Short, blonde hair, wearing glasses', '2023-11-01', '2024-11-15', 'https://example.com/janesmith.jpg', 'sudah', 11111),
-(6, 'Emily Davis', 'Tall, curly red hair, fair skin', '2023-10-25', '0000-00-00', 'https://example.com/emilydavis.jpg', 'belum', 12121),
-(7, 'Emily Davis', 'Tall, curly red hair, fair skin', '2023-10-25', '0000-00-00', 'https://example.com/emilydavis.jpg', 'belum', 2222),
-(8, 'Emily wanjay', 'Tall, curly red hair, fair skin', '2023-10-25', '0000-00-00', 'https://example.com/emilydavis.jpg', 'belum', 4121122);
+(9, 'Rubi ganteng', 'dv', '2024-12-01', '2024-12-01', '1733818873534-733447564.jpg', '', 123),
+(10, 'asu', 'agung asu', '2024-12-03', '2024-12-18', '1733820210307-451440305.jpg', '', 123),
+(11, 'jsncjs', 'cantik', '2024-12-10', '0000-00-00', '1733822420780-593020968.jpg', 'belum', 98),
+(12, 'nvjnv', 'vvv', '2024-12-01', '0000-00-00', '1733822665489-984264540.JPG', 'belum', 456);
 
 -- --------------------------------------------------------
 
@@ -125,7 +116,7 @@ ALTER TABLE `notification`
 -- AUTO_INCREMENT for table `orang_hilang`
 --
 ALTER TABLE `orang_hilang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
