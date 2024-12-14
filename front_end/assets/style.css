@@ -46,10 +46,10 @@ display: none;
 position: absolute;
 right: 0;
 top: 50px;
-height: 20vh;
+height: 100%;;
 background: #134B70;
 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-padding: 2rem;
+padding: 1rem;
 border-radius: 5px;
 z-index: 1000;
 }
