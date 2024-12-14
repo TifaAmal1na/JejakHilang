@@ -6,7 +6,7 @@ export default function loadLogin() {
     if (heroElement) {
       heroElement.style.display = 'none';
     }
-    
+
     // Menampilkan form login menggunakan innerHTML
     mainContent.innerHTML = `
         <section class="login-section">
@@ -59,6 +59,7 @@ export default function loadLogin() {
                 window.isLoggedIn = true; // Menandakan pengguna sudah login
                 mainContent.innerHTML = ''; // Hapus form login setelah login berhasil
                 window.location.href = '/home'; // Alihkan ke halaman home setelah login sukses
+
             } else {
                 alert(result.error || 'Login failed'); // Tampilkan pesan error jika login gagal
             }
