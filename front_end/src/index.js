@@ -41,10 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
     loadForm(); // Memanggil fungsi dari form.js untuk menampilkan form pelaporan
     
     if (heroElement) {
-      heroElement.style.display = 'none'; // Menyembunyikan .hero hanya di halaman form
+      heroElement.style.display = 'none';// Menyembunyikan .hero hanya di halaman form
     }
     
-    drawer.classList.remove('active'); // Tutup menu drawer setelah klik
+    drawer.classList.remove('active');// Tutup menu drawer setelah klik
   });
 
   // Event listener untuk membuka menu navigasi (drawer)

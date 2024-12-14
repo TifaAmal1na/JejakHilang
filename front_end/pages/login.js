@@ -1,6 +1,12 @@
 export default function loadLogin() {
     const mainContent = document.getElementById('main-content');
-
+    const heroElement = document.querySelector('.hero'); // Ambil elemen hero
+  
+    // Sembunyikan elemen hero saat halaman detail dimuat
+    if (heroElement) {
+      heroElement.style.display = 'none';
+    }
+    
     // Menampilkan form login menggunakan innerHTML
     mainContent.innerHTML = `
         <section class="login-section">

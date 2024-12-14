@@ -1,16 +1,23 @@
+// detail.js
 const baseUrl = 'http://localhost:3000/api/orang_hilang';
 
 export default function loadDetail(id) {
   const mainContent = document.getElementById('main-content');
+  
+  // Tampilkan pesan loading sementara
   mainContent.innerHTML = `<p>Loading data...</p>`;
+  const heroElement = document.querySelector('.hero'); // Ambil elemen hero
+  
+  // Sembunyikan elemen hero saat halaman detail dimuat
+  if (heroElement) {
+    heroElement.style.display = 'none';
+  }
 
   // Mengambil data orang hilang berdasarkan ID dari API
-  fetch(baseUrl)
+  fetch(`${baseUrl}/${id}`) // Menggunakan ID untuk memanggil data yang spesifik
     .then((response) => response.json())
-    .then((data) => {
-      // Mencari data dengan ID yang cocok
-      const person = data.find((item) => item.id == id);
-
+    .then((person) => {
+      // Jika data ditemukan
       if (person) {
         mainContent.innerHTML = `
           <section class="detail">
