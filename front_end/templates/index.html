@@ -22,19 +22,12 @@
       <nav id="drawer" class="nav">
         <button id="closeDrawer" class="close-btn" aria-label="Close Menu">X</button>
         <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#" id="home-link">Home</a>
-          </li>
-          <li class="nav__item">
-            <a href="#" id="form-link">Form Pelaporan</a>
-          </li>
+          <li class="nav__item"><a href="#" id="home-link">Home</a></li>
+          <li class="nav__item"><a href="#" id="form-link">Form Pelaporan</a></li>
+          <li class="nav__item"><a href="#" id="login-link" class="auth-link">Login Admin</a></li> <!-- login dalam daftar -->
+        <li class="nav__item"><button id="logout-btn" class="auth-link" style="display: none;">Logout</button></li> <!-- logout dalam daftar -->
         </ul>
       </nav>
-      <!-- Login/Logout Buttons -->
-      <div class="auth-buttons">
-        <button id="login-btn">Login</button>
-        <button id="logout-btn" style="display: none;">Logout</button>
-      </div>
     </div>
   </header>
 
@@ -49,13 +42,15 @@
   <!-- Login Modal -->
   <div id="login-modal" class="modal" style="display: none;">
     <div class="modal-content">
-      <h2>Login</h2>
+
+      <h2>Login Admin</h2>
+      <!-- Tombol Close (X) -->
+      <button id="close-login">X</button>
       <form id="login-form">
         <input type="text" id="username" placeholder="Username" required>
         <input type="password" id="password" placeholder="Password" required>
         <button type="submit">Login</button>
       </form>
-      <button id="close-login-modal" class="close-btn">Close</button>
     </div>
   </div>
 

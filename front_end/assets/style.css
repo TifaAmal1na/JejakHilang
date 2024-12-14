@@ -197,6 +197,96 @@ main {
   font-size: 1rem;
 }
 
+/* Modal Login */
+#login-modal {
+  display: none; /* Menyembunyikan modal login secara default */
+  background-color: rgba(0, 0, 0, 0.6); /* Latar belakang transparan */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#login-modal .modal-content {
+  background-color: white;
+  padding: 30px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative; /* Agar tombol close bisa diposisikan relatif terhadap form */
+}
+
+/* Judul Modal */
+#login-modal .modal-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Login */
+form {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Agar tombol close dapat diposisikan di dalam form */
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Efek saat fokus di input */
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
+}
+
+/* Tombol Login */
+button[type="submit"] {
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Tombol Close */
+#close-login {
+  position: absolute;
+  top: 10px;  /* Mengatur jarak dari atas */
+  right: -200px;  /* Mengatur jarak dari kanan */
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+#close-login:hover {
+  color: #2955e4;  /* Mengubah warna saat hover */
+}
+
+
 /* Missing List */
 .missing-list {
   margin-top: 2rem;
@@ -452,7 +542,19 @@ button {
   padding: 10px;
 }
 }
+/* Responsif untuk tampilan mobile */
+@media (max-width: 600px) {
+  #login-modal .modal-content {
+      width: 90%;
+      padding: 20px;
+  }
 
+  input[type="text"],
+  input[type="password"],
+  button[type="submit"] {
+      font-size: 14px;
+  }
+}
 
 /* Responsif untuk layar kecil */
 @media (max-width: 768px) {
@@ -550,7 +652,7 @@ footer {
 
 .close-btn {
   margin-top: 10px;
-  background: red;
+  background: transparent;
   color: white;
   border: none;
   padding: 10px;

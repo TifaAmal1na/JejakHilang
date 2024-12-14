@@ -47,6 +47,26 @@ document.addEventListener('DOMContentLoaded', () => {
     drawer.classList.remove('active');// Tutup menu drawer setelah klik
   });
 
+  document.getElementById('login-link').addEventListener('click', function() {
+    document.getElementById('login-modal').style.display = 'block'; // Menampilkan modal login
+  });
+  
+  // Mendapatkan elemen tombol close dan modal login
+const closeButton = document.getElementById('close-login');
+const modal = document.getElementById('login-modal');
+
+// Menambahkan event listener untuk menutup modal ketika tombol X diklik
+closeButton.addEventListener('click', function() {
+    modal.style.display = 'none';
+});
+
+// Menambahkan event listener untuk menutup modal jika klik di luar modal
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
   // Event listener untuk membuka menu navigasi (drawer)
   hamburger.addEventListener('click', () => {
     drawer.classList.add('active'); // Tambahkan kelas untuk menampilkan drawer
