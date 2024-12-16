@@ -78,12 +78,12 @@ color: #fcfafa;
 
 .close-btn {
   position: absolute;
-  bottom: -50px; /* Menempatkan tombol 10px dari bawah */
-  right: 10px;  /* Menempatkan tombol 10px dari kanan */
+  bottom: -50px; 
+  right: 10px;  
   background: transparent;
   font-size: 20px;
   cursor: pointer;
-  border: none; /* Menghilangkan border jika ada */
+  border: none; 
   color: #ffffff; /* Warna teks tombol */
   transition: color 0.3s ease;
 }
@@ -276,8 +276,8 @@ button[type="submit"]:hover {
 /* Tombol Close */
 #close-login {
   position: absolute;
-  top: 10px;  /* Mengatur jarak dari atas */
-  right: -200px;  /* Mengatur jarak dari kanan */
+  top: 10px;  
+  right: 10px;  
   background-color: transparent;
   border: none;
   font-size: 20px;
