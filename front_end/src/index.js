@@ -72,6 +72,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  document.addEventListener('DOMContentLoaded', () => {
+    // Ambil elemen pencarian
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+  
+    // Fungsi untuk menangani pencarian
+    const handleSearch = () => {
+      const query = searchInput.value.trim().toLowerCase(); // Ambil nilai input dan konversi ke huruf kecil
+      const persons = document.querySelectorAll('.person'); // Ambil semua elemen daftar orang
+  
+      persons.forEach(person => {
+        const name = person.querySelector('p').textContent.toLowerCase(); // Ambil nama orang dari elemen
+        if (name.includes(query)) {
+          person.style.display = 'block'; // Tampilkan jika nama cocok
+        } else {
+          person.style.display = 'none'; // Sembunyikan jika tidak cocok
+        }
+      });
+    };
+  
+    // Tambahkan event listener pada tombol pencarian
+    searchButton.addEventListener('click', handleSearch);
+  
+    // Tambahkan event listener untuk pencarian saat mengetik
+    searchInput.addEventListener('input', handleSearch);
+  });
+  
   // Event listener untuk membuka menu navigasi (drawer)
   hamburger.addEventListener('click', () => {
     drawer.classList.add('active'); // Tambahkan kelas untuk menampilkan drawer
