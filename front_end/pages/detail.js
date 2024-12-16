@@ -5,6 +5,7 @@ export default function loadDetail(id) {
   mainContent.innerHTML = `<p>Loading data...</p>`;
   const heroElement = document.querySelector('.hero'); // Ambil elemen hero
   
+  window.history.pushState({}, '', '/detail'); // Menambahkan route /detail
   // Sembunyikan elemen hero saat halaman detail dimuat
   if (heroElement) {
     heroElement.style.display = 'none';

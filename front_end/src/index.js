@@ -4,7 +4,6 @@ import '../assets/style.css'; // Sesuaikan path relatif menuju folder assets
 // Mengimpor modul yang diperlukan
 import loadHome from '../pages/home.js';
 import loadForm from '../pages/form.js'; 
-// import loadLogin from '../pages/login.js';
 
 // Menambahkan kode JavaScript untuk interaktivitas
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Tampilkan halaman home saat pertama kali membuka halaman
   loadHome();
+  window.history.pushState({}, '', '/home'); // Menambahkan route /home
 
   // Pastikan .hero terlihat di halaman Home
   if (heroElement) {
@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   homeLink.addEventListener('click', (event) => {
     event.preventDefault(); // Mencegah reload halaman
     loadHome(); // Memanggil fungsi dari home.js untuk menampilkan halaman home
+    window.history.pushState({}, '', '/home'); // Menambahkan route /home
     
     if (heroElement) {
       heroElement.style.display = 'flex';
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   formLink.addEventListener('click', (event) => {
     event.preventDefault(); // Mencegah reload halaman
     loadForm(); // Memanggil fungsi dari form.js untuk menampilkan form pelaporan
+    window.history.pushState({}, '', '/form'); // Menambahkan route /form
     
     if (heroElement) {
       heroElement.style.display = 'none'; // Menyembunyikan .hero hanya di halaman form
@@ -54,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault(); // Mencegah pengalihan halaman
     const loginModal = document.getElementById('login-modal');
     loginModal.style.display = 'block'; // Menampilkan modal login
+    window.history.pushState({}, '', '/admin'); // Menambahkan route /home
   });
 
   // Mendapatkan elemen tombol close dan modal login
