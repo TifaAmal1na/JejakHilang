@@ -219,7 +219,10 @@ main {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  position: relative; /* Agar tombol close bisa diposisikan relatif terhadap form */
+  position: absolute; /* Agar tombol close bisa diposisikan relatif terhadap form */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Judul Modal */
@@ -650,6 +653,20 @@ footer {
   width: 300px;
   text-align: center;
 }
+
+#login-modal {
+  display: flex;
+  justify-content: center; /* Center horizontal */
+  align-items: center;     /* Center vertical */
+  position: fixed;         /* Tetap di tengah layar */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Transparan */
+  z-index: 1000;           /* Agar modal tampil di atas konten lain */
+}
+
 
 .close-btn {
   position: absolute;
