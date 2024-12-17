@@ -725,6 +725,25 @@ footer {
   width: 150px;  /* Adjust this value to your preferred width */
   height: auto;  /* Keeps the aspect ratio of the logo intact */
 }
+/* styling button delete */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
 
 
 

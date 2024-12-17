@@ -46,7 +46,7 @@ display: none;
 position: absolute;
 right: 0;
 top: 50px;
-height: 100%;
+height: 100%;;
 background: #134B70;
 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 padding: 1rem;
@@ -73,20 +73,21 @@ margin-bottom: 0;
 }
 
 .nav__item a {
-color: #fcfafa; /* Mengubah warna teks menjadi hitam */
+color: #fcfafa;
 }
 
 .close-btn {
   position: absolute;
-  bottom: 50px;
-  top: 80px;
-  left: 0px;
-  right: 0px;
+  bottom: -50px; 
+  right: 10px;  
   background: transparent;
   font-size: 20px;
   cursor: pointer;
-  border: none;
+  border: none; 
+  color: #ffffff; /* Warna teks tombol */
+  transition: color 0.3s ease;
 }
+
 
 
 .navbar__toggler {
@@ -196,6 +197,99 @@ main {
 .hero p {
   font-size: 1rem;
 }
+
+/* Modal Login */
+#login-modal {
+  display: none; /* Menyembunyikan modal login secara default */
+  background-color: rgba(0, 0, 0, 0.6); /* Latar belakang transparan */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#login-modal .modal-content {
+  background-color: white;
+  padding: 30px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: absolute; /* Agar tombol close bisa diposisikan relatif terhadap form */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Judul Modal */
+#login-modal .modal-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Login */
+form {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Agar tombol close dapat diposisikan di dalam form */
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Efek saat fokus di input */
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
+}
+
+/* Tombol Login */
+button[type="submit"] {
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Tombol Close */
+#close-login {
+  position: absolute;
+  top: 10px;  
+  right: 10px;  
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+#close-login:hover {
+  color: #2955e4;  /* Mengubah warna saat hover */
+}
+
 
 /* Missing List */
 .missing-list {
@@ -452,7 +546,19 @@ button {
   padding: 10px;
 }
 }
+/* Responsif untuk tampilan mobile */
+@media (max-width: 600px) {
+  #login-modal .modal-content {
+      width: 90%;
+      padding: 20px;
+  }
 
+  input[type="text"],
+  input[type="password"],
+  button[type="submit"] {
+      font-size: 14px;
+  }
+}
 
 /* Responsif untuk layar kecil */
 @media (max-width: 768px) {
@@ -548,15 +654,32 @@ footer {
   text-align: center;
 }
 
-.close-btn {
-  margin-top: 10px;
-  background: red;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
+#login-modal {
+  display: flex;
+  justify-content: center; /* Center horizontal */
+  align-items: center;     /* Center vertical */
+  position: fixed;         /* Tetap di tengah layar */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Transparan */
+  z-index: 1000;           /* Agar modal tampil di atas konten lain */
 }
+
+
+.close-btn {
+  position: absolute;
+  bottom: -50px; /* Menempatkan tombol 10px dari bawah */
+  right: 10px;  /* Menempatkan tombol 10px dari kanan */
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  border: none; /* Menghilangkan border jika ada */
+  color: #ffffff; /* Warna teks tombol */
+  transition: color 0.3s ease;
+}
+
 
 /* Responsif: Untuk layar yang lebih kecil */
 @media (max-width: 1200px) {
@@ -601,6 +724,25 @@ footer {
 .logo__image {
   width: 150px;  /* Adjust this value to your preferred width */
   height: auto;  /* Keeps the aspect ratio of the logo intact */
+}
+/* styling button delete */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
 }
 
 
