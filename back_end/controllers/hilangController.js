@@ -15,9 +15,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Get all records from orang_hilang
+// Get records yang belum ditemukan from orang_hilang
 exports.getAllHilang = (req, res) => {
-    const query = "SELECT * FROM orang_hilang WHERE status = 'belum'";
+    const query = "SELECT * FROM orang_hilang";
     db.query(query, (err, results) => {
         if (err) {
             console.error('Error fetching data:', err);
@@ -88,3 +88,15 @@ exports.deleteHilang = (req, res) => {
         res.status(200).json({ message: 'Record deleted successfully' });
     });
 };
+
+// // Get all record from orang_hilang
+// exports.getAllOrangHilang = (req, res) => {
+//     const query = "SELECT * FROM orang_hilang WHERE status = 'belum'";
+//     db.query(query, (err, results) => {
+//         if (err) {
+//             console.error('Error fetching data:', err);
+//             return res.status(500).json({ error: err.message });
+//         }
+//         res.status(200).json(results);
+//     });
+// };
