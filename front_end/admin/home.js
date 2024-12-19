@@ -6,6 +6,10 @@ const baseUrl = 'http://localhost:3000/api/orang_hilang';
 export default function loadHome() {
   const mainContent = document.getElementById('main-content');
   mainContent.innerHTML = `
+    <section class="header">
+      <h1>Admin Dashboard</h1>
+      <button id="logout-button">Logout</button>
+    </section>
     <section class="search-bar">
       <input type="text" id="search-input" placeholder="Cari nama orang hilang...">
       <button id="search-button">Cari</button>
@@ -21,6 +25,13 @@ export default function loadHome() {
   const container = document.getElementById('missing-list-container');
   const searchInput = document.getElementById('search-input');
   const searchButton = document.getElementById('search-button');
+  const logoutButton = document.getElementById('logout-button');
+
+    // Mengembalikan user ke halaman utama (user biasa)
+    logoutButton.addEventListener('click', () => {
+      window.location.href = '/'; // Mengarahkan kembali ke halaman awal
+    });
+    
   
   // Variabel untuk menyimpan data orang hilang
   let orangHilang = [];

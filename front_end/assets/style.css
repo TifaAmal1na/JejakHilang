@@ -745,5 +745,34 @@ footer {
   background-color: #c0392b;
 }
 
+.header {
+  display: flex;
+  justify-content: center; /* Mengatur agar konten berada di tengah */
+  align-items: center; /* Vertikal rata tengah */
+  padding: 10px 20px;
+  background-color: #f0f0f0; /* Warna latar belakang */
+  border-bottom: 2px solid #ddd;
+  position: relative; /* Untuk mengatur tombol logout secara absolut */
+}
 
+.dashboard-title {
+  text-align: center;
+  font-size: 24px;
+  margin: 0;
+}
 
+.logout-button {
+  position: absolute; /* Posisi absolut untuk tombol logout */
+  right: 20px; /* Jarak dari tepi kanan */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #0056b3;
+}
