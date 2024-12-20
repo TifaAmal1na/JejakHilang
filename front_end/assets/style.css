@@ -78,7 +78,7 @@ color: #fcfafa;
 
 .close-btn {
   position: absolute;
-  bottom: -50px; 
+  bottom: 0px; 
   right: 10px;  
   background: transparent;
   font-size: 20px;
@@ -486,16 +486,12 @@ font-size: 1.1em;
 font-weight: 600;
 border-radius: 12px;
 cursor: pointer;
-width: 100%;
+width: 20%;
 margin-top: 15px;
 transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-button:hover {
-background-color: #3664b6;
-box-shadow: 0 4px 12px rgba(75, 56, 42, 0.4);
-transform: translateY(-2px);
-}
+
 
 button:active {
 transform: scale(0.97);
@@ -505,12 +501,10 @@ box-shadow: 0 2px 6px rgba(75, 56, 42, 0.3);
 
 .close-btn {
   position: absolute;
-  bottom: 50px;
-  top: 80px;
-  left: 0px;
-  right: 0px;
+  top: 70px;
+  right: 10px;
   background: transparent;
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
   border: none;
 }
@@ -670,7 +664,7 @@ footer {
 
 .close-btn {
   position: absolute;
-  bottom: -50px; /* Menempatkan tombol 10px dari bawah */
+  bottom: 0px; /* Menempatkan tombol 10px dari bawah */
   right: 10px;  /* Menempatkan tombol 10px dari kanan */
   background: transparent;
   font-size: 20px;
@@ -746,29 +740,24 @@ footer {
 }
 
 .header {
-  display: flex;
-  justify-content: center; /* Mengatur agar konten berada di tengah */
-  align-items: center; /* Vertikal rata tengah */
+  justify-content: center; /* Konten di tengah secara horizontal */
+  align-items: center; /* Rata tengah secara vertikal */
   padding: 10px 20px;
   background-color: #f0f0f0; /* Warna latar belakang */
   border-bottom: 2px solid #ddd;
-  position: relative; /* Untuk mengatur tombol logout secara absolut */
+  position: relative; /* Untuk memposisikan tombol logout */
 }
 
-.dashboard-title {
-  text-align: center;
-  font-size: 24px;
-  margin: 0;
-}
+
 
 .logout-button {
-  position: absolute; /* Posisi absolut untuk tombol logout */
+  position: absolute; /* Posisi absolut untuk mengatur lokasi tombol */
   right: 20px; /* Jarak dari tepi kanan */
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 15px;
-  font-size: 16px;
+  padding: 5px 10px; /* Ukuran tombol diperkecil */
+  font-size: 14px; /* Ukuran font diperkecil */
   border-radius: 5px;
   cursor: pointer;
 }
